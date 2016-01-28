@@ -1,2 +1,3 @@
 # XMNOISE
-XMNOISE FEEL THE PULSE
+XMNOISE Experience the Pulse
+
