@@ -50,6 +50,10 @@ a {
     }
 }
 
+.bg_wrapper{
+    background: url(../img/bgtexture.jpg) center center @base;
+}
+
 .light {
     font-weight: 400;
 }
@@ -57,7 +61,7 @@ a {
 .navbar-custom {
     margin-bottom: 0;
     border-bottom: 1px solid fade(white, 30%);
-    // text-transform: uppercase;
+    text-transform: uppercase;
     font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
     background: @secondary;
     opacity: 0.8;
@@ -125,6 +129,15 @@ a {
             filter: alpha(opacity=90); /* For IE8 and earlier */
             border-bottom: 1px solid fade(white, 30%);
         }
+    }
+}
+
+.logo-responsive {
+    max-width: 100%;
+    height: auto; 
+    display: block;
+    @media(min-width:768px) {
+        max-width: 80%;
     }
 }
 
