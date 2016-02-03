@@ -89,7 +89,7 @@ table th {
     border-bottom: 1px solid fade(white, 30%);
     text-transform: uppercase;
     font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
-    background: @secondary;
+    background: @base;
     opacity: 0.8;
     filter: alpha(opacity=80); /* For IE8 and earlier */
 
@@ -161,7 +161,7 @@ table th {
 }
 
 .logo-responsive {
-    max-width: 100%;
+    max-width: 40%;
     height: auto; 
     display: block;
     @media(min-width:768px) {
@@ -180,7 +180,7 @@ table th {
     padding: 100px 0;
     text-align: center;
     color: white;
-    background: url(../img/XMRBW.jpg) no-repeat bottom center scroll;
+    background: url(../img/XMWIDE.jpg) no-repeat bottom center scroll;
     background-color: black;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -195,7 +195,7 @@ table th {
         .intro-text {
             font-size: 18px;
             color: @base;
-            background-color: @accent; 
+            // background-color: @accent; 
                         opacity: 0.9;
             filter: alpha(opacity=90); /* For IE8 and earlier */
         }
@@ -295,18 +295,34 @@ table th {
     width: 100%;
     padding: 50px 0;
     color: white;
-    background: url(../img/downloads-bg.jpg) no-repeat center center scroll;
-    background-color: black;
+    // background: url(../img/downloads-bg.jpg) no-repeat center center scroll;
+    // background-color: black;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
 }
 
-#map {
-    width: 100%;
-    height: 200px;
-    margin-top: 100px;
+
+.thumbs {
+    img:hover {
+    -webkit-filter: grayscale(0%);
+    -webkit-transition: .5s ease-in-out;
+    -moz-filter: grayscale(0%);
+    -moz-transition: .5s ease-in-out;
+    -o-filter: grayscale(0%);
+    -o-transition: .5s ease-in-out;
+    filter: grayscale(0%);
+    }
+    img {
+    -webkit-filter: grayscale(100%);
+    -webkit-transition: .5s ease-in-out;
+    -moz-filter: grayscale(100%);
+    -moz-transition: .5s ease-in-out;
+    -o-filter: grayscale(100%);
+    -o-transition: .5s ease-in-out;
+    filter: grayscale(100%);
+    }
 }
 
 @media(min-width:767px) {
