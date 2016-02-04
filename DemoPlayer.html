@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<!-- Website Design By: www.happyworm.com -->
+<title>Demo : jPlayer as an audio playlist player</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+<link href="css/jplayer.metro-fire.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jplayer/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="js/add-on/jplayer.playlist.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){
+
+
+var cssSelector = { jPlayer: "#jquery_jplayer_1", cssSelectorAncestor: "#jp_container_1" };
+var options = { swfPath: "js/jplayer", supplied: "oga, mp3", wmode: "window", useStateClassSkin: true, autoBlur: false, smoothPlayBar: true, keyEnabled: true } ; 
+
+
+var playlist = []; // Empty playlist
+// var myPlaylist;  // Almost there
+$.getJSON('../js/jplayer/playlist.json', function (data) {
+	playlist = data; 
+}).done(function() {
+    var myPlaylist = new jPlayerPlaylist(cssSelector, playlist, options);
+  })
+
+
+
+});
+//]]>
+</script>
+</head>
+<body>
+<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+<div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+	<div class="jp-type-playlist">
+		<div class="jp-gui jp-interface">
+			<div class="jp-controls">
+				<a class="jp-previous"><span class="glyphicon glyphicon-backward"></span></a>
+				<a class="jp-play"><span class="glyphicon glyphicon-play-circle"></span></a>
+				<a class="jp-pause"><span class="glyphicon glyphicon-pause"></span></a>
+				<a class="jp-next"><span class="glyphicon glyphicon-forward"></span></a>
+			</div>
+			<div class="jp-progress">
+			<div class="jp-seek-bar">
+				<div class="jp-play-bar">
+				</div>
+			</div>
+			<div class="jp-current-time"></div>
+		</div>
+		<div class="jp-no-solution">
+			Media Player Error<br>
+			Update your browser or Flash plugin
+		</div>
+		</div>
+		<div class="jp-playlist">
+			<ul>
+				<li>&nbsp;</li>
+			</ul>
+		</div>
+		<div class="jp-no-solution">
+			<span>Update Required</span>
+			To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+		</div>
+	</div>
+</div>
+</body>
+
+</html>

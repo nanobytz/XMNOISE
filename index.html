@@ -29,10 +29,14 @@
         
         <!-- Custom CSS -->
         <link href="css/grayscale.css" rel="stylesheet">
+        <!-- JPlayer Audio -->
+        <link href="css/jplayer.metro-fire.css" rel="stylesheet" type="text/css" />
         <!-- Custom Fonts -->
         <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+        
         <!--     <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"> -->
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -99,6 +103,84 @@
                 </div>
             </div>
         </header>
+        <!-- Enter the Player -->
+
+<!--     <section class="player-wrapper">
+        <div class="row">
+            
+                <div id="jp_container_1" class="jp-audio text-center col-md-8 col-md-offset-2" role="application" aria-label="media player">
+                    <div class="jp-type-playlist">
+                        <div class="jp-gui jp-interface">
+                            <div class="jp-controls">
+                                <a class="jp-previous"><span class="glyphicon glyphicon-backward"></span></a>
+                                <a class="jp-play"><span class="glyphicon glyphicon-play-circle"></span></a>
+                                <a class="jp-pause"><span class="glyphicon glyphicon-pause"></span></a>
+                                <a class="jp-next"><span class="glyphicon glyphicon-forward"></span></a>
+                            </div>
+                            <div class="jp-progress">
+                                <div class="jp-seek-bar">
+                                    <div class="jp-play-bar">
+                                    </div>
+                                </div>
+                                <div class="jp-current-time"></div>
+                            </div>
+                            <div class="jp-no-solution">
+                                Media Player Error<br>
+                                Update your browser or Flash plugin
+                            </div>
+                        </div>
+                        <div class="jp-playlist">
+                            <ul>
+                                <li>&nbsp;</li>
+                            </ul>
+                        </div>
+                        <div class="jp-no-solution">
+                            <span>Update Required</span>
+                            To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+                        </div>
+                    </div>
+                </div>
+
+
+        </div>
+    </section> -->
+        <section class="player-wrapper">
+            <div class="row">
+                <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+                <div id="jp_container_1" class="jp-audio text-center col-md-8 col-md-offset-2" role="application" aria-label="media player">
+                    <div class="jp-type-playlist">
+                        <div class="jp-gui jp-interface">
+                            <div class="jp-controls">
+                                <a class="jp-previous"><span class="glyphicon glyphicon-backward"></span></a>
+                                <a class="jp-play"><span class="glyphicon glyphicon-play-circle"></span></a>
+                                <a class="jp-pause"><span class="glyphicon glyphicon-pause"></span></a>
+                                <a class="jp-next"><span class="glyphicon glyphicon-forward"></span></a>
+                            </div>
+                            <div class="jp-progress">
+                                <div class="jp-seek-bar">
+                                    <div class="jp-play-bar">
+                                    </div>
+                                </div>
+                                <div class="jp-current-time"></div>
+                            </div>
+                            <div class="jp-no-solution">
+                                Media Player Error<br>
+                                Update your browser or Flash plugin
+                            </div>
+                        </div>
+                        <div class="jp-playlist">
+                            <ul>
+                                <li>&nbsp;</li>
+                            </ul>
+                        </div>
+                        <div class="jp-no-solution">
+                            <span>Update Required</span>
+                            To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <div class="bg_wrapper">
             <!-- Story Section -->
             <section id="story" class="container content-section text-justify">
@@ -117,7 +199,6 @@
             </div>
         </div>
     </section>
-
     <!-- Sounds Section -->
     <section id="sounds" class="container content-section text-center">
         <div class="row">
@@ -163,20 +244,14 @@
         </div>
     </section>
     <!-- Thumbnails -->
-            <!-- Thumbnails -->
-            <section class="content-section text-center container thumbs">
-                <div class="row">
-               
-  
-   
-                    <div class="col-md-4 img-responsive"><img src="img/Thumb1.jpg" alt="..." class="img-thumbnail"></div>
-                    <div class="col-md-4 img-responsive"><img src="img/Thumb2.jpg" alt="..." class="img-thumbnail"></div>
-                    <div class="col-md-4 img-responsive"><img src="img/Thumb3.jpg" alt="..." class="img-thumbnail"></div>
-
-
+    <section class="content-section text-center container thumbs">
+        <div class="row">
+            
+            <div class="col-md-4 img-responsive"><img src="img/Thumb1.jpg" alt="..." class="img-thumbnail"></div>
+            <div class="col-md-4 img-responsive"><img src="img/Thumb2.jpg" alt="..." class="img-thumbnail"></div>
+            <div class="col-md-4 img-responsive"><img src="img/Thumb3.jpg" alt="..." class="img-thumbnail"></div>
         </div>
     </section>
-
     <!-- Contribute -->
     <section id="contribute" class="content-section text-center">
         <div class="download-section">
@@ -247,5 +322,23 @@
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
 <!-- Custom Theme JavaScript -->
 <script src="js/grayscale.js"></script>
+<!-- JPlayer JavaScript and JSON -->
+<script type="text/javascript" src="js/jplayer/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="js/add-on/jplayer.playlist.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){
+var cssSelector = { jPlayer: "#jquery_jplayer_1", cssSelectorAncestor: "#jp_container_1" };
+var options = { swfPath: "js/jplayer", supplied: "oga, mp3", wmode: "window", useStateClassSkin: true, autoBlur: false, smoothPlayBar: true, keyEnabled: true } ;
+var playlist = []; // Empty playlist
+var myPlaylist;
+$.getJSON('../js/jplayer/playlist.json', function (data) {
+playlist = data;
+}).done(function() {
+var myPlaylist = new jPlayerPlaylist(cssSelector, playlist, options);
+})
+});
+//]]>
+</script>
 </body>
 </html>
