@@ -30,7 +30,7 @@
         <!-- Custom CSS -->
         <link href="css/grayscale.css" rel="stylesheet">
         <!-- JPlayer Audio -->
-        <link href="css/jplayer.metro-fire.css" rel="stylesheet" type="text/css" />
+        <!-- <link href="css/jplayer.metro-fire.css" rel="stylesheet" type="text/css" /> -->
         <!-- Custom Fonts -->
         <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
@@ -103,84 +103,42 @@
                 </div>
             </div>
         </header>
-        <!-- Enter the Player -->
-
-<!--     <section class="player-wrapper">
-        <div class="row">
-            
-                <div id="jp_container_1" class="jp-audio text-center col-md-8 col-md-offset-2" role="application" aria-label="media player">
-                    <div class="jp-type-playlist">
-                        <div class="jp-gui jp-interface">
-                            <div class="jp-controls">
-                                <a class="jp-previous"><span class="glyphicon glyphicon-backward"></span></a>
-                                <a class="jp-play"><span class="glyphicon glyphicon-play-circle"></span></a>
-                                <a class="jp-pause"><span class="glyphicon glyphicon-pause"></span></a>
-                                <a class="jp-next"><span class="glyphicon glyphicon-forward"></span></a>
-                            </div>
-                            <div class="jp-progress">
-                                <div class="jp-seek-bar">
-                                    <div class="jp-play-bar">
-                                    </div>
-                                </div>
-                                <div class="jp-current-time"></div>
-                            </div>
-                            <div class="jp-no-solution">
-                                Media Player Error<br>
-                                Update your browser or Flash plugin
-                            </div>
-                        </div>
-                        <div class="jp-playlist">
-                            <ul>
-                                <li>&nbsp;</li>
-                            </ul>
-                        </div>
-                        <div class="jp-no-solution">
-                            <span>Update Required</span>
-                            To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
-                        </div>
-                    </div>
-                </div>
-
-
-        </div>
-    </section> -->
+        <!-- Enter Player -->
         <section class="player-wrapper">
-            <div class="row">
-                <div id="jquery_jplayer_1" class="jp-jplayer"></div>
-                <div id="jp_container_1" class="jp-audio text-center col-md-8 col-md-offset-2" role="application" aria-label="media player">
-                    <div class="jp-type-playlist">
-                        <div class="jp-gui jp-interface">
-                            <div class="jp-controls">
+            <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+            <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+                <div class="jp-type-playlist">
+                    <div class="jp-gui jp-interface">
+                        <div class="jp-controls">
+
+                                <a class="jp-play"><strong><span class="glyphicon glyphicon-play"></span></strong></a>
+                                <a class="jp-pause"><strong><span class="glyphicon glyphicon-pause"></span></strong></a>
                                 <a class="jp-previous"><span class="glyphicon glyphicon-backward"></span></a>
-                                <a class="jp-play"><span class="glyphicon glyphicon-play-circle"></span></a>
-                                <a class="jp-pause"><span class="glyphicon glyphicon-pause"></span></a>
+
                                 <a class="jp-next"><span class="glyphicon glyphicon-forward"></span></a>
-                            </div>
-                            <div class="jp-progress">
-                                <div class="jp-seek-bar">
-                                    <div class="jp-play-bar">
-                                    </div>
-                                </div>
-                                <div class="jp-current-time"></div>
-                            </div>
-                            <div class="jp-no-solution">
-                                Media Player Error<br>
-                                Update your browser or Flash plugin
-                            </div>
+    
                         </div>
-                        <div class="jp-playlist">
-                            <ul>
-                                <li>&nbsp;</li>
-                            </ul>
+                        <div class="jp-progress">
+
+                                <a> <span class="track-title col-xs-1 text-left">This is the song title that never ends it goes on and on my friends</a></span>
+                            <div class="jp-seek-bar">
+
+                                <div class="jp-play-bar">
+                                </div>
+                            </div>
+
+                            <div class="jp-current-time"></div>
                         </div>
                         <div class="jp-no-solution">
-                            <span>Update Required</span>
-                            To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+                            Media Player Error<br>
+                            Update your browser or Flash plugin
                         </div>
                     </div>
                 </div>
             </div>
+            
         </section>
+
         <div class="bg_wrapper">
             <!-- Story Section -->
             <section id="story" class="container content-section text-justify">

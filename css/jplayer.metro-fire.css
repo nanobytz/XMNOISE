@@ -1,4 +1,9 @@
-﻿.jp-audio {
+﻿
+
+
+
+
+.jp-audio {
   position: relative;
   font-family: 'Source Sans Pro', sans-serif;
   text-align: left;
@@ -11,7 +16,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #7e3400;
+  color: ##181715;
   /*margin: 0;*/
   padding: 0;
   border: 0;
@@ -22,9 +27,9 @@
   left: 0;
   position: absolute;
   top: 0;
-  width: 100px;
+  width: 300px;
   height: 100%;
-  background-color: #ff6a00;
+  background-color: #312C28;
 }
 .jp-audio .jp-controls a {
   text-decoration: none;
@@ -55,7 +60,7 @@
 .jp-audio .jp-progress {
   position: absolute;
   top: 0;
-  left: 100px;
+  left: 300px;
   right: 0;
   height: 100%;
   background-color: #ffd850;
