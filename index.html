@@ -130,6 +130,11 @@
                                 Update your browser or Flash plugin
                             </div>
                         </div>
+                        <div class="jp-playlist">
+                            <ul>
+                                <li>&nbsp;</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -281,44 +286,34 @@
 <script type="text/javascript" src="js/add-on/jplayer.playlist.min.js"></script>
 <script type="text/javascript">
 //<![CDATA[
-$(document).ready(function(){
-var cssSelector = { jPlayer: "#jquery_jplayer_1", cssSelectorAncestor: "#jp_container_1" };
-var options = { swfPath: "js/jplayer", supplied: "oga, mp3", wmode: "window", useStateClassSkin: true, autoBlur: false, smoothPlayBar: true, keyEnabled: true   } ;
-var playlist = []; // Empty playlist
-var myPlaylist;
-
-$.getJSON('../js/jplayer/playlist.json', function (data) {
+$(document).ready(function() {
+    var cssSelector = {
+        jPlayer: "#jquery_jplayer_1",
+        cssSelectorAncestor: "#jp_container_1"
+    };
+    var options = {
+        swfPath: "js/jplayer",
+        supplied: "oga, mp3",
+        wmode: "window",
+        useStateClassSkin: true,
+        autoBlur: false,
+        smoothPlayBar: true,
+        keyEnabled: true
+    };
+    var playlist = []; // Empty playlist
+    var myPlaylist;
+    $.getJSON('../js/jplayer/playlist.json', function(data) {
         playlist = data;
-        // $("#jp_container_1 .track-title").html([playlist[0].title]);
+        $("#jp_container_1 .track-title").html([playlist[0].title]);
     }).done(function() {
         var myPlaylist = new jPlayerPlaylist(cssSelector, playlist, options);
-
-
-$("#jquery_jplayer_1").bind($.jPlayer.event.play, function (event) {
-    var current = myPlaylist.current,
-        playlist = myPlaylist.playlist;
-        
-        myPlaylist.add({
-  title:"Tempered Song",
-  artist:"Miaow",
-  mp3:"http://www.jplayer.org/audio/mp3/Miaow-01-Tempered-song.mp3",
-  oga:"http://www.jplayer.org/audio/ogg/Miaow-01-Tempered-song.ogg"
-});
-
-
-        $("#jp_container_1 .track-title").html([playlist[myPlaylist.current].title])
-
-});
-
-
-
-
-
+        $("#jquery_jplayer_1").bind($.jPlayer.event.play, function(event) {
+            var current = myPlaylist.current,
+                playlist = myPlaylist.playlist;
+            $("#jp_container_1 .track-title").html([playlist[myPlaylist.current].title])
+        });
     })
 
-
-
-    console.log('Hi');
 });
 //]]>
 </script>
