@@ -175,25 +175,25 @@
                     <tbody>
                         <tr>
                             <td>149</td>
-                            <td><a href="media/PeopleXMNOISE.mp3" class="fap-single-track" data-autoenqueue="yes"><i class="fa fa-play-circle fa-2x"></i></a></td>
+                            <td><a href="javascript:;" id="playlist-play-0"><i class="fa fa-play-circle fa-2x"></i></a></td>
                             <td>Zeek Payen, Steve Marcum, Tosin, Sophia Poitier</td>
                             <td><button type="button" class="btn btn-default">Free Download</button></td>
                         </tr>
                         <tr>
                             <td>None Like You</td>
-                            <td><a href="media/PeopleXMNOISE.mp3" class="fap-single-track" data-autoenqueue="yes"><i class="fa fa-play-circle fa-2x"></i></a></td>
+                            <td><a href="javascript:;" id="playlist-play-1"><i class="fa fa-play-circle fa-2x"></i></a></td>
                             <td>Zeek Payen, Sally Holl, Tosin, Sophia Poitier</td>
                             <td><button type="button" class="btn btn-default">Free Download</button></td>
                         </tr>
                         <tr>
                             <td>Love Will Make a Way</td>
-                            <td><a href="media/EnsenameXMNOISE.mp3" class="fap-single-track" data-autoenqueue="yes"><i class="fa fa-play-circle fa-2x"></i></a></td>
+                            <td><a href="javascript:;" id="playlist-play-2"><i class="fa fa-play-circle fa-2x"></i></a></td>
                             <td>TBA</td>
                             <td> <a href="media/EnsenameXMNOISE.mp3" download="Ensename"> <button type="button" class="btn btn-default">Free Download</button></a></td>
                         </tr>
                         <tr>
                             <td>Ense&ntilde;ame</td>
-                            <td><a href="media/EnsenameXMNOISE.mp3" class="fap-single-track" data-autoenqueue="yes"><i class="fa fa-play-circle fa-2x"></i></a></td>
+                            <td><a href="javascript:;" id="playlist-play-3"><i class="fa fa-play-circle fa-2x"></i></a></td>
                             <td>Xavier</td>
                             <td> <a href="media/EnsenameXMNOISE.mp3" download="Ensename"> <button type="button" class="btn btn-default">Free Download</button></a></td>
                         </tr>
@@ -306,12 +306,34 @@ $(document).ready(function() {
         playlist = data;
         $("#jp_container_1 .track-title").html([playlist[0].title]);
     }).done(function() {
+
+        // AJAX HAS BEEN LOADED
         var myPlaylist = new jPlayerPlaylist(cssSelector, playlist, options);
         $("#jquery_jplayer_1").bind($.jPlayer.event.play, function(event) {
             var current = myPlaylist.current,
                 playlist = myPlaylist.playlist;
             $("#jp_container_1 .track-title").html([playlist[myPlaylist.current].title])
         });
+
+
+
+
+    // Links on WebPage
+
+    $("#playlist-play-0").click(function() {
+        myPlaylist.play(0);
+    });
+    $("#playlist-play-1").click(function() {
+        myPlaylist.play(1);
+    });
+    $("#playlist-play-2").click(function() {
+        myPlaylist.play(2);
+    });
+    $("#playlist-play-3").click(function() {
+        myPlaylist.play(3);
+    });
+
+
     })
 
 });
