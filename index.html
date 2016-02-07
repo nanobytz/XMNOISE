@@ -105,32 +105,32 @@
         </header>
         <!-- Enter Player -->
         <section class="player-wrapper">
-        <div class="player-center">
-            <div id="jquery_jplayer_1" class="jp-jplayer"></div>
-            <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
-                <div class="jp-type-playlist">
-                    <div class="jp-gui jp-interface">
-                        <div class="jp-controls">
-                            <a class="jp-play"><strong><span class="glyphicon glyphicon-play"></span></strong></a>
-                            <a class="jp-pause"><strong><span class="glyphicon glyphicon-pause"></span></strong></a>
-                            <a class="jp-previous"><span class="glyphicon glyphicon-backward"></span></a>
-                            <a class="jp-next"><span class="glyphicon glyphicon-forward"></span></a>
-                            
-                        </div>
-                        <div class="jp-progress">
-                            <a> <span class="track-title col-xs-1 text-left">This is the song title that never ends it goes on and on my friends</a></span>
-                            <div class="jp-seek-bar">
-                                <div class="jp-play-bar">
-                                </div>
+            <div class="player-center">
+                <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+                <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+                    <div class="jp-type-playlist">
+                        <div class="jp-gui jp-interface">
+                            <div class="jp-controls">
+                                <a class="jp-play"><strong><span class="glyphicon glyphicon-play"></span></strong></a>
+                                <a class="jp-pause"><strong><span class="glyphicon glyphicon-pause"></span></strong></a>
+                                <a class="jp-previous"><span class="glyphicon glyphicon-backward"></span></a>
+                                <a class="jp-next"><span class="glyphicon glyphicon-forward"></span></a>
+                                
                             </div>
-                            <div class="jp-current-time"></div>
-                        </div>
-                        <div class="jp-no-solution">
-                            Media Player Error<br>
-                            Update your browser or Flash plugin
+                            <div class="jp-progress">
+                                <a> <span class="track-title col-xs-1 text-left">...</a></span>
+                                <div class="jp-seek-bar">
+                                    <div class="jp-play-bar">
+                                    </div>
+                                </div>
+                                <div class="jp-current-time"></div>
+                            </div>
+                            <div class="jp-no-solution">
+                                Media Player Error<br>
+                                Update your browser or Flash plugin
+                            </div>
                         </div>
                     </div>
-                </div>
                 </div>
             </div>
         </section>
@@ -146,7 +146,8 @@
                     the feelings of the heart and the passions of the soul in a single medium.
                 </p>
                 <p>This time however, something was different.
-                    <strong>Transcending</strong> the physical construct of just sound waves and fine instrumentation. These were ancient sounds as if birthed into the very fabric of the cosmos.
+                    <strong>Transcending</strong> the physical construct of just sound waves and fine instrumentation. It was as if these sounds were birthed into
+                    the very fabric of the Universe, the discovery of ancient sounds.
                 We exist to re-discover that sound and share the experience with humanity. </p>
                 <p>Discover the <strong>Song of All Songs</strong> within your own soul. <strong>Eternity</strong> has been planted in the human heart. We humbly share our own attempt with you.</p>
             </div>
@@ -282,14 +283,42 @@
 //<![CDATA[
 $(document).ready(function(){
 var cssSelector = { jPlayer: "#jquery_jplayer_1", cssSelectorAncestor: "#jp_container_1" };
-var options = { swfPath: "js/jplayer", supplied: "oga, mp3", wmode: "window", useStateClassSkin: true, autoBlur: false, smoothPlayBar: true, keyEnabled: true } ;
+var options = { swfPath: "js/jplayer", supplied: "oga, mp3", wmode: "window", useStateClassSkin: true, autoBlur: false, smoothPlayBar: true, keyEnabled: true   } ;
 var playlist = []; // Empty playlist
 var myPlaylist;
+
 $.getJSON('../js/jplayer/playlist.json', function (data) {
-playlist = data;
-}).done(function() {
-var myPlaylist = new jPlayerPlaylist(cssSelector, playlist, options);
-})
+        playlist = data;
+        // $("#jp_container_1 .track-title").html([playlist[0].title]);
+    }).done(function() {
+        var myPlaylist = new jPlayerPlaylist(cssSelector, playlist, options);
+
+
+$("#jquery_jplayer_1").bind($.jPlayer.event.play, function (event) {
+    var current = myPlaylist.current,
+        playlist = myPlaylist.playlist;
+        
+        myPlaylist.add({
+  title:"Tempered Song",
+  artist:"Miaow",
+  mp3:"http://www.jplayer.org/audio/mp3/Miaow-01-Tempered-song.mp3",
+  oga:"http://www.jplayer.org/audio/ogg/Miaow-01-Tempered-song.ogg"
+});
+
+
+        $("#jp_container_1 .track-title").html([playlist[myPlaylist.current].title])
+
+});
+
+
+
+
+
+    })
+
+
+
+    console.log('Hi');
 });
 //]]>
 </script>
