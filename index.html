@@ -306,7 +306,6 @@ $(document).ready(function() {
         playlist = data;
         $("#jp_container_1 .track-title").html([playlist[0].title]);
     }).done(function() {
-
         // AJAX HAS BEEN LOADED
         var myPlaylist = new jPlayerPlaylist(cssSelector, playlist, options);
         $("#jquery_jplayer_1").bind($.jPlayer.event.play, function(event) {
@@ -314,28 +313,20 @@ $(document).ready(function() {
                 playlist = myPlaylist.playlist;
             $("#jp_container_1 .track-title").html([playlist[myPlaylist.current].title])
         });
-
-
-
-
-    // Links on WebPage
-
-    $("#playlist-play-0").click(function() {
-        myPlaylist.play(0);
-    });
-    $("#playlist-play-1").click(function() {
-        myPlaylist.play(1);
-    });
-    $("#playlist-play-2").click(function() {
-        myPlaylist.play(2);
-    });
-    $("#playlist-play-3").click(function() {
-        myPlaylist.play(3);
-    });
-
-
+        // Links on WebPage
+        $("#playlist-play-0").click(function() {
+            myPlaylist.play(0);
+        });
+        $("#playlist-play-1").click(function() {
+            myPlaylist.play(1);
+        });
+        $("#playlist-play-2").click(function() {
+            myPlaylist.play(2);
+        });
+        $("#playlist-play-3").click(function() {
+            myPlaylist.play(3);
+        });
     })
-
 });
 //]]>
 </script>
