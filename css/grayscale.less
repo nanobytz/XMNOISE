@@ -154,14 +154,58 @@ max-width: 80%;
 .icon-scroll {
 color: @primary;
 }
+
+/* Responsive Images */
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+ .intro {
+ 	background: url(../img/WIDE1600.jpg) no-repeat bottom center scroll;
+ 	min-height: 100%; 
+ }
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+ .intro {
+ 	min-height: 100%;
+ 	background: url(../img/WIDE1050.jpg) no-repeat bottom center scroll;
+ }
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+ .intro {
+ 	background: url(../img/TALL1050.jpg) no-repeat bottom center scroll;
+ 	min-height: 100%; 
+ }
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+ .intro {
+ 	background: url(../img/WIDE700a.jpg) no-repeat bottom center scroll;
+ 	min-height: 100%; 
+ }
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+ .intro {	
+ 	background: url(../img/TALL480.jpg) no-repeat bottom center scroll;
+ 	min-height: 100%; 
+ }
+}
+
 .intro {
 display: table;
 width: 100%;
-height: auto;
-padding: 100px 0;
+// height: 736px;
+padding: 20% 0;
 text-align: center;
 color: white;
-background: url(../img/XMWIDE.jpg) no-repeat bottom center scroll;
+// background: url(../img/WIDE1600.jpg) no-repeat bottom center scroll;
+// background: url(../img/WIDE1600.jpg) 50% 50% / cover no-repeat;
 background-color: black;
 -webkit-background-size: cover;
 -moz-background-size: cover;
@@ -172,6 +216,7 @@ display: table-cell;
 vertical-align: middle;
 .brand-heading {
 font-size: 40px;
+
 }
 .intro-text {
 font-size: 18px;
@@ -182,7 +227,7 @@ filter: alpha(opacity=90); /* For IE8 and earlier */
 }
 }
 @media(min-width:768px) {
-height: 100%;
+// height: 100%;
 padding: 0;
 .intro-body {
 .brand-heading {
